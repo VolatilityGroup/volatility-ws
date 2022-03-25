@@ -1,0 +1,74 @@
+{
+  "name": "@volatility/volatility-ws",
+  "version": "0.4.0",
+  "description": "Documentation for Volatility WebSockets API",
+  "main": "dist/index.js",
+  "source": "src/index.ts",
+  "types": "dist/index.d.ts",
+  "repository": "VolatilityGroup/volatility-ws",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "release": "standard-version",
+    "release:minor": "standard-version --release-as minor",
+    "release:patch": "standard-version --release-as patch",
+    "release:major": "standard-version --release-as major",
+    "build": "tsc",
+    "precommit": "lint-staged",
+    "test": "npm run build && jest --forceExit --runInBand",
+    "prepare": "npm run build && husky install",
+    "format": "prettier --write .",
+    "check-format": "prettier --check .",
+    "theme": "ag --install api.yml @asyncapi/html-template -o ./docs --force-write",
+    "docs": "ag api.yml @asyncapi/html-template -o ./docs --force-write",
+    "prepublish": "uglifyjs --compress --mangle --output dist/volatility-ws.min.js --source-map url=dist/volatility-ws.min.js.map -- ./dist/*.js ./dist/realtime/*.js"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^16.2.3",
+    "@commitlint/config-conventional": "^16.2.1",
+    "@types/bintrees": "^1.0.3",
+    "bintrees": "^1.0.2",
+    "debug": "^4.3.4",
+    "fs-extra": "^10.0.1",
+    "got": "^12.0.2",
+    "https-proxy-agent": "^5.0.0",
+    "p-map": "^5.3.0",
+    "ws": "^8.5.0"
+  },
+  "devDependencies": {
+    "@types/debug": "^4.1.7",
+    "@types/fs-extra": "^9.0.13",
+    "@types/jest": "^27.4.1",
+    "@types/node": "^17.0.23",
+    "@types/ws": "^8.5.3",
+    "cross-var": "^1.1.0",
+    "husky": "^7.0.0",
+    "jest": "^27.5.1",
+    "lint-staged": "^12.3.7",
+    "prettier": "^2.6.0",
+    "source-map-support": "^0.5.21",
+    "standard-version": "^9.3.2",
+    "ts-jest": "^27.1.4",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "lint-staged": {
+    "*.{ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "jest": {
+    "transform": {
+      "\\.(ts|tsx)?$": "ts-jest"
+    },
+    "testEnvironment": "node",
+    "passWithNoTests": true
+  }
+}

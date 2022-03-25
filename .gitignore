@@ -1,0 +1,24 @@
+# Dependency directories
+node_modules/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+.ssh
+
+# Generated docs
+docs/
+
+# Coverage reports
+coverage
+
+# API keys and secrets
+.env
+.envrc
+dist
+example/
+.vscode
+build/
