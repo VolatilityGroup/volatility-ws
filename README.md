@@ -38,7 +38,7 @@ export VOLATILITY_API_KEY=<API_KEY>
 
 3. In your terminal run: 
 ```
-node_modules/ts-node/dist/bin.js src/example.ts
+npx ts-node src/example.ts
 ```
 
 You can see the example script source code [here](./src/example.ts).
