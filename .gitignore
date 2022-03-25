@@ -18,7 +18,6 @@ coverage
 # API keys and secrets
 .env
 .envrc
-dist
 example/
 .vscode
 build/
