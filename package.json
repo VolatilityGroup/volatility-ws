@@ -1,6 +1,6 @@
 {
   "name": "@volatility/volatility-ws",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Documentation for Volatility WebSockets API",
   "main": "dist/index.js",
   "source": "src/index.ts",
