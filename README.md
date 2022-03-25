@@ -24,19 +24,24 @@ To use our WebSocket API a valid API key is required.  Here's how:
 Our API can be accessed through our npm package server-side or directly using the 
 WebSocket Client API client-side.
 
-If you clone this repository, you can run our example script in node by doing the following:
-1. In your terminal run: 
+
+1. Clone this repository.
+2. Switch to this directory. In your terminal run:
+```
+cd volatility-ws
+```
+3. In your terminal run: 
 ```
 npm install
 ```
-2. Add your API key as an environment variable. In your terminal run: 
+4. Add your API key as an environment variable. In your terminal run: 
 
 ```
 export VOLATILITY_API_KEY=<API_KEY>
 ```
 - Replace `<API_KEY>` with your API key our team provided you.
 
-3. In your terminal run: 
+5. In your terminal run: 
 ```
 npx ts-node src/example.ts
 ```
